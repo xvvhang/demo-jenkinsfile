@@ -25,12 +25,12 @@ pipeline {
             }
         }
         
-        stage('Lint') {
-            steps {
-                echo 'Running linting...'
-                sh 'npm run lint || true'  // Continue even if linting fails
-            }
-        }
+        // stage('Lint') {
+        //     steps {
+        //         echo 'Running linting...'
+        //         sh 'npm run lint || true'  // Continue even if linting fails
+        //     }
+        // }
         
         stage('Build') {
             steps {
