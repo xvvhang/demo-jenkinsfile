@@ -18,13 +18,6 @@ pipeline {
             }
         }
         
-        stage('Install Dependencies') {
-            steps {
-                echo 'Installing dependencies...'
-                sh 'npm ci'
-            }
-        }
-        
         // stage('Lint') {
         //     steps {
         //         echo 'Running linting...'
@@ -35,7 +28,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
+                sh 'pwd'
+                sh 'ls -la'
+                sh 'ls node_modules/.bin || true'
+                sh 'npm -v'
                 sh 'node -v'
+                sh 'npm install'
                 sh 'npm run build'
             }
         }
